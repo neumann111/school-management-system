@@ -9,9 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/interaction": "^6.1.21",
+    "@fullcalendar/react": "^6.1.21",
+    "@fullcalendar/timegrid": "^6.1.21",
+    "@hookform/resolvers": "^5.4.0",
+    "clsx": "^2.1.1",
+    "fullcalendar": "^6.1.21",
+    "lucide-react": "^1.23.0",
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-calendar": "^6.0.1",
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.81.0",
+    "recharts": "^3.9.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
