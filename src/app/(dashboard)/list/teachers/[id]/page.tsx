@@ -20,6 +20,7 @@ import FullCalendarComponent from "@/components/FullCalendar";
 import { role } from "@/lib/data";
 
 export default function SingleTeacherPage() {
+  const currentRole = role as string;
   const mockTeacher = {
     id: 1,
     username: "deanguerrero",
@@ -63,7 +64,7 @@ export default function SingleTeacherPage() {
                 <h1 className="text-xl font-bold text-slate-800">
                   {mockTeacher.firstName} {mockTeacher.lastName}
                 </h1>
-                {role === "teacher" && (
+                {currentRole === "teacher" && (
                   <FormModal table="teacher" type="update" data={mockTeacher} id={mockTeacher.id} />
                 )}
               </div>

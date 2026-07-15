@@ -37,7 +37,9 @@ export default function TeacherListPage() {
   const [currentPage, setCurrentPage] = useState(1);
   
   // 1. Change this from a constant to a State variable
-  const [itemsPerPage, setItemsPerPage] = useState(5); 
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const currentRole = role as string;
+  const isTeacher = currentRole === "teacher";
 
   const totalPages = Math.max(1, Math.ceil(teachersData.length / itemsPerPage));
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -75,7 +77,7 @@ export default function TeacherListPage() {
               <Eye size={14} strokeWidth={2.5} />
             </button>
           </Link>
-          {role === "teacher" && (
+          {isTeacher && (
             <>
               <FormModal table="teacher" type="update" data={item} id={item.id} />
               <FormModal table="teacher" type="delete" id={item.id} />
@@ -106,7 +108,7 @@ export default function TeacherListPage() {
             <button className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-800" title="Sort">
               <SlidersHorizontal size={14} strokeWidth={2.5} />
             </button>
-            {role === "teacher" && <FormModal table="teacher" type="create" />}
+            {isTeacher && <FormModal table="teacher" type="create" />}
           </div>
         </div>
       </div>
